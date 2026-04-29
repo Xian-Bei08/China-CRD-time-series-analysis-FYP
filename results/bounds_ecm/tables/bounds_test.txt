@@ -1,0 +1,6 @@
+BoundsTestResult
+Stat: 7.45903
+Upper P-value: 0.000635
+Lower P-value: 6.77e-05
+Null: No Cointegration
+Alternative: Possible Cointegration

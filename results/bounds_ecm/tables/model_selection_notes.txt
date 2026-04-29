@@ -1,0 +1,3 @@
+best_path=elastic_net
+selected_diff_vars=['d_household_pm_lag0', 'd_household_pm_lag1', 'd_household_pm_lag2', 'trend']
+ardl_level_vars=['household_pm', 'trend']

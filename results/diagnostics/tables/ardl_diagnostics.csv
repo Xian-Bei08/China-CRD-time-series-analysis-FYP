@@ -1,0 +1,4 @@
+test,statistic,p_value
+Breusch-Godfrey serial correlation,10.832492119422337,0.004443797124892404
+White heteroskedasticity,0.269181968527778,0.8740733483384296
+Jarque-Bera normality,2.736755199279812,0.25451955738441373

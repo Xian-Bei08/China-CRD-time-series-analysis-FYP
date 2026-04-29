@@ -1,0 +1,7 @@
+variable,adf_level_p,adf_diff_p,kpss_level_p,inferred_order,ardl_note
+crd_daly_rate,0.7715753670605068,0.1817539756432241,0.011129281735023873,Inconclusive; discuss as small-sample limitation,Requires cautious interpretation
+pm25,0.9726498446119065,0.00015535643530451205,0.1,I(1),OK for ARDL if not I(2)
+ozone,0.25957054593074735,0.9984085691250404,0.1,Inconclusive; discuss as small-sample limitation,Requires cautious interpretation
+household_pm,0.6276034958339569,0.6497176950907206,0.01,Inconclusive; discuss as small-sample limitation,Requires cautious interpretation
+ageing_65_plus,1.0,0.9937306211542661,0.01,Inconclusive; discuss as small-sample limitation,Requires cautious interpretation
+gov_health_exp_pct_gdp,0.9492631575571144,8.273075960250223e-09,0.01,I(1),OK for ARDL if not I(2)

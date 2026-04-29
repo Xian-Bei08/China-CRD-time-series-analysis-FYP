@@ -1,0 +1,28 @@
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:        d_crd_daly_rate   R-squared:                       0.671
+Model:                            OLS   Adj. R-squared:                  0.613
+Method:                 Least Squares   F-statistic:                     11.71
+Date:                Wed, 29 Apr 2026   Prob (F-statistic):           2.47e-05
+Time:                        10:03:16   Log-Likelihood:                -129.63
+No. Observations:                  28   AIC:                             269.3
+Df Residuals:                      23   BIC:                             275.9
+Df Model:                           4                                         
+Covariance Type:            nonrobust                                         
+=======================================================================================
+                          coef    std err          t      P>|t|      [0.025      0.975]
+---------------------------------------------------------------------------------------
+const                 115.3755     25.150      4.587      0.000      63.348     167.403
+d_household_pm_lag0     6.7018     11.838      0.566      0.577     -17.787      31.191
+d_household_pm_lag1    22.6545     20.867      1.086      0.289     -20.512      65.821
+d_household_pm_lag2   -19.2564     12.035     -1.600      0.123     -44.152       5.639
+trend                  -4.3107      0.954     -4.520      0.000      -6.284      -2.338
+==============================================================================
+Omnibus:                        0.184   Durbin-Watson:                   0.822
+Prob(Omnibus):                  0.912   Jarque-Bera (JB):                0.276
+Skew:                           0.169   Prob(JB):                        0.871
+Kurtosis:                       2.649   Cond. No.                         125.
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.

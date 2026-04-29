@@ -1,0 +1,2 @@
+best_path,final_selected_variables,n_selected,meta_alpha,meta_l1_ratio,meta_n_selected,meta_selected_features,meta_inner_cv_splits
+elastic_net,d_household_pm_lag0 | d_household_pm_lag1 | d_household_pm_lag2 | trend,4,10.0,0.9,4,"['d_household_pm_lag0', 'd_household_pm_lag1', 'd_household_pm_lag2', 'trend']",5
