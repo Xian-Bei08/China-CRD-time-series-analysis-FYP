@@ -1,41 +1,62 @@
-# CRD burden modelling pipeline
+# Modelling Chronic Respiratory Disease Burden in China  
+### A Multi-Stage Feature Selection and ARDL-ECM Analysis
 
-This is a cleaned version of the dissertation codebase. It removes old cached files, old result outputs, legacy pipeline fragments, and unused modelling branches.
+## Overview
 
-## Pipeline order
+This project develops a time-series analytical framework to model the dynamics of chronic respiratory disease (CRD) burden in China. Using national-level data from the Global Burden of Disease (GBD) study and World Bank indicators, the analysis integrates feature selection, econometric modelling, and visual analytics.
 
-Run from the project root:
+The objective is to identify key risk factors associated with CRD burden, evaluate their short-run effects, and assess long-run equilibrium relationships.
 
-```bash
-python run_pipeline.py
-```
+---
 
-Or run stages individually:
+## Data Sources
 
-```bash
-python -m src.pipeline.run_01_build_modelling_dataset
-python -m src.pipeline.run_02_prechecks
-python -m src.pipeline.run_03_feature_screening_compare
-python -m src.pipeline.run_04_baseline_ols_loocv
-python -m src.pipeline.run_05_ardl_ecm
-python -m src.pipeline.run_06_diagnostics_and_visuals
-```
+- Global Burden of Disease (GBD): CRD DALY rates and risk factor exposures  
+- World Bank: Socioeconomic indicators (GDP per capita, population ageing, government health expenditure)
 
-## Current modelling logic
+All data used are publicly available.
 
-1. Build level and first-differenced modelling datasets.
-2. Run concise prechecks: missingness, descriptive statistics, correlation, VIF, ADF and integration screening.
-3. Compare full-sample feature screening paths descriptively.
-4. Use nested LOOCV to compare feature-selection paths through OLS prediction performance.
-5. Refit the best full-sample selected OLS specification.
-6. Map selected differenced variables back to level variables for ARDL-ECM and bounds testing.
-7. Generate the CUSUM diagnostic plot for the selected short-run OLS specification.
+---
 
-## Main configuration
+## Methodology
 
-All file paths, variable lists, model grids, and ARDL settings are centralised in:
+The modelling framework follows a four-stage pipeline:
 
-```text
-src/config.py
-```
+### 1. Data Processing and Prechecks
+- Construction of a national time-series dataset  
+- First differencing to reduce non-stationarity  
+- Lag feature generation (lag 0–2)  
+- Augmented Dickey–Fuller (ADF) tests  
+- Variance Inflation Factor (VIF) analysis  
 
+### 2. Feature Selection
+Multiple approaches are compared under small-sample constraints:
+- Elastic Net regression  
+- Backward elimination (p-value based)  
+- Random Forest importance ranking  
+- VIF-based filtering  
+
+### 3. Model Evaluation
+- Ordinary Least Squares (OLS) models  
+- Leave-One-Out Cross-Validation (LOOCV)  
+- Comparison of predictive performance across model specifications  
+
+### 4. Dynamic Modelling
+- Autoregressive Distributed Lag (ARDL) models  
+- Error Correction Model (ECM) representation  
+- Bounds testing for cointegration
+
+## Visual Analytics and Dashboard
+It does not present causal conclusions, but instead communicates:
+- Observed trends  
+- Model-implied relationships  
+- Short-run vs long-run dynamics  
+
+---
+
+## Key Findings
+
+- Household air pollution emerges as key predictors of CRD burden  
+- Short-run dynamics are captured through differenced models  
+- ARDL-ECM analysis indicates a stable long-run equilibrium relationship  
+- Model results highlight the importance of delayed environmental effects
